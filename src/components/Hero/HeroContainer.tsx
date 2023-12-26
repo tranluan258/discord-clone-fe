@@ -1,15 +1,15 @@
-import { FC, ReactElement, useEffect, useState } from 'react'
+import { FC, ReactElement, useEffect, useState } from 'react';
 
 const HeroCotainer: FC<{}> = (): ReactElement => {
-  const [agent, setAgent] = useState<string>('')
+  const [agent, setAgent] = useState<string>('');
 
   useEffect(() => {
-    const agent = navigator.userAgent
+    const agent = navigator.userAgent;
 
-    if (agent.includes('Windows')) setAgent('Windows')
-    else if (agent.includes('Mac')) setAgent('Mac')
-    else if (agent.includes('Linux')) setAgent('Linux')
-  }, [])
+    if (agent.includes('Windows')) setAgent('Windows');
+    else if (agent.includes('Mac')) setAgent('Mac');
+    else if (agent.includes('Linux')) setAgent('Linux');
+  }, []);
   return (
     <>
       <div className="z-1 grid grid-cols-12 gap-5 bg-[#404EED] px-[200px] py-[120px]">
@@ -58,7 +58,7 @@ const HeroCotainer: FC<{}> = (): ReactElement => {
         />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default HeroCotainer
+export default HeroCotainer;

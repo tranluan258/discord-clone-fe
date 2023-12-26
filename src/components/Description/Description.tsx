@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement } from 'react';
 
 const Description: FC<{}> = (): ReactElement => {
   return (
@@ -79,6 +79,6 @@ const Description: FC<{}> = (): ReactElement => {
         </div>
       </div>
     </>
-  )
-}
-export default Description
+  );
+};
+export default Description;

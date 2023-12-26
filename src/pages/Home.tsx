@@ -1,5 +1,5 @@
-import Description from '@/components/Description/Description'
-import Hero from '@/components/Hero/Hero'
+import Description from '../components/Description/Description';
+import Hero from '../components/Hero/Hero';
 
 const Home = () => {
   return (
@@ -7,7 +7,7 @@ const Home = () => {
       <Hero />
       <Description />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

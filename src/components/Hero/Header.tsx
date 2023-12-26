@@ -1,9 +1,12 @@
-import { FC, ReactElement } from 'react'
+import { FC, ReactElement } from 'react';
 
-const Header: FC<{}> = (): ReactElement => {
-  const user = {
-    displayName: 'Huy',
-  }
+export interface HeaderProps {
+  user?: {
+    username?: string;
+  };
+}
+
+const Header: FC<HeaderProps> = (props: HeaderProps): ReactElement => {
   return (
     <div className="grid  h-[80px] w-full grid-cols-12 bg-[#404EED] px-[100px] py-6 ">
       <header className="col-start-1  col-end-13">
@@ -50,7 +53,7 @@ const Header: FC<{}> = (): ReactElement => {
             </a>
           </div>
           <div className="mb-1 rounded-3xl bg-white px-3 py-3 text-[14px]">
-            {user ? (
+            {props!.user?.username ? (
               <a href="/@me">Open Discord</a>
             ) : (
               <a href="/login">Login Discord</a>
@@ -59,7 +62,7 @@ const Header: FC<{}> = (): ReactElement => {
         </nav>
       </header>
     </div>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;
