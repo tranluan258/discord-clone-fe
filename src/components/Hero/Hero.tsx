@@ -1,10 +1,10 @@
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import Header, { HeaderProps } from './Header';
-import HeroCotainer from './HeroContainer';
+import HeroContainer from './HeroContainer';
 
 const TITLE = 'Discord | Your Place to Talk and Hang Out';
 
-const Hero: FC<{}> = (): ReactElement => {
+const Hero = (): ReactElement => {
   const [user, setUser] = useState<HeaderProps['user']>({});
   useEffect(() => {
     document.title = TITLE;
@@ -16,7 +16,7 @@ const Hero: FC<{}> = (): ReactElement => {
   return (
     <div className="flex flex-col">
       <Header user={user} />
-      <HeroCotainer />
+      <HeroContainer />
     </div>
   );
 };

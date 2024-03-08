@@ -1,4 +1,5 @@
 import { FC, ReactElement } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export interface HeaderProps {
   user?: {
@@ -52,11 +53,11 @@ const Header: FC<HeaderProps> = (props: HeaderProps): ReactElement => {
               Careers
             </a>
           </div>
-          <div className="mb-1 rounded-3xl bg-white px-3 py-3 text-[14px]">
+          <div className="z-10 mb-1 rounded-3xl bg-white px-3 py-3 text-[14px]">
             {props!.user?.username ? (
-              <a href="/@me">Open Discord</a>
+              <NavLink to="/@me">Open Discord</NavLink>
             ) : (
-              <a href="/login">Login Discord</a>
+              <NavLink to="/login">Login Discord</NavLink>
             )}
           </div>
         </nav>

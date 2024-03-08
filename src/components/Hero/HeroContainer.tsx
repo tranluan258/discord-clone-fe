@@ -1,6 +1,6 @@
-import { FC, ReactElement, useEffect, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 
-const HeroCotainer: FC<{}> = (): ReactElement => {
+const HeroContainer = (): ReactElement => {
   const [agent, setAgent] = useState<string>('');
 
   useEffect(() => {
@@ -61,4 +61,4 @@ const HeroCotainer: FC<{}> = (): ReactElement => {
   );
 };
 
-export default HeroCotainer;
+export default HeroContainer;
