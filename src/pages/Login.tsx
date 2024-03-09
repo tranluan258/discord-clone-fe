@@ -1,4 +1,17 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 const Login = () => {
+  const [identity, setIdentity] = useState('');
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    // navigate('/channels/@me')
+    // TODO: Implement login
+    navigate('/channels/@me');
+  };
   return (
     <>
       <div className="flex h-screen w-full items-center  justify-center bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -13,16 +26,23 @@ const Login = () => {
               </h2>
             </div>
             <div>
-              <form className="flex flex-col items-center justify-center">
+              <form
+                className="flex flex-col items-center justify-center"
+                onSubmit={handleSubmit}
+              >
                 <input
                   type="text"
                   placeholder="Email or Phone Number"
                   className="mt-4 h-[60px] w-[400px] rounded-xl bg-gray-800 px-4 py-2 text-white"
+                  value={identity}
+                  onChange={(e) => setIdentity(e.target.value)}
                 />
                 <input
                   type="password"
                   placeholder="Password"
                   className="mt-4 h-[60px] w-[400px] rounded-xl bg-gray-800 px-4 py-2 text-white"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 <div className="mt-4 flex items-center justify-center">
                   <a href="" className="text-white">
