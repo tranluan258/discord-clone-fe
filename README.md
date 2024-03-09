@@ -2,5 +2,5 @@
 
 # React + TypeScript + Vite
 
-![index]('./images/index.png')
-![login]('./images/login.png')
+![index](./images/index.png)
+![login](./images/login.png)
