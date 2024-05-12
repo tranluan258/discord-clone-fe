@@ -1,6 +1,6 @@
 import { FC, ReactElement } from 'react';
 
-const Description: FC<{}> = (): ReactElement => {
+const Description: FC<object> = (): ReactElement => {
   return (
     <>
       <div className="mt-20 flex items-center">
