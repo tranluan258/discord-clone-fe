@@ -1,18 +1,19 @@
+import { ReactElement } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 
-const Channel = () => {
+const Channel = (): ReactElement => {
   const channels = [
     {
       id: '1',
-      name: 'General',
+      name: 'Group 1',
     },
     {
       id: '2',
-      name: 'Random',
+      name: 'Group 2',
     },
     {
       id: '3',
-      name: 'Off-topic',
+      name: 'Group 3',
     },
   ];
   return (
@@ -38,7 +39,9 @@ const Channel = () => {
                 <li key={channel.id} className="mb-3">
                   <NavLink to={`/channels/${channel.id}`} className="flex">
                     <span className="inline-flex items-center justify-center">
-                      <div className="h-14 w-14 rounded-full bg-gray-800"></div>
+                      <div className="h-14 w-14 rounded-full">
+                        {channel.name}
+                      </div>
                     </span>
                   </NavLink>
                 </li>

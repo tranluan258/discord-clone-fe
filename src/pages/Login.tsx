@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [identity, setIdentity] = useState('');
-  const [password, setPassword] = useState('');
+  const [identity, setIdentity] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
   const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // navigate('/channels/@me')
     // TODO: Implement login
     navigate('/channels/@me');
   };
@@ -36,6 +35,7 @@ const Login = () => {
                   className="mt-4 h-[60px] w-[400px] rounded-xl bg-gray-800 px-4 py-2 text-white"
                   value={identity}
                   onChange={(e) => setIdentity(e.target.value)}
+                  required={true}
                 />
                 <input
                   type="password"
@@ -43,6 +43,7 @@ const Login = () => {
                   className="mt-4 h-[60px] w-[400px] rounded-xl bg-gray-800 px-4 py-2 text-white"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  required={true}
                 />
                 <div className="mt-4 flex items-center justify-center">
                   <a href="" className="text-white">

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Channels from './pages/channels/Channel';
 import ChannelInfo from './pages/channels/ChannelInfo';
+import ChatContainer from './pages/channels/ChatContainer';
 
 const router = createBrowserRouter([
   { path: '/', element: <Home /> },
@@ -19,10 +20,12 @@ const router = createBrowserRouter([
       {
         path: '@me',
         element: <ChannelInfo />,
+        children: [{ path: ':chatContainer' }],
       },
       {
         path: ':channelId',
         element: <ChannelInfo />,
+        children: [{ path: ':groupId', element: <ChatContainer /> }],
       },
     ],
   },
